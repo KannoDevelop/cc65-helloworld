@@ -1,0 +1,14 @@
+[
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": { "task": "Clean" },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": { "task": "Build All" },
+        "when": "editorTextFocus"
+    }
+]

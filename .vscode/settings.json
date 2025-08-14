@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "fieldmap.h": "c",
+        "maingameflag.h": "c",
+        "palettecontroller.h": "c",
+        "messagewindow.h": "c",
+        "maingame_gameflow_title.h": "c",
+        "maingame_enemymanager.h": "c",
+        "maingame_flag.h": "c",
+        "famisprite.h": "c",
+        "famiman.h": "c",
+        "se_02.h": "c",
+        "frg_stageclear.h": "c"
+    }
+}
