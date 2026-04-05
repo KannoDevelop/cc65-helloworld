@@ -53,6 +53,7 @@ $(BUILD_DIR):
 
 # クリーンアップ
 clean:
-	for /f "delims=" %%f in ('dir /b /a-d $(BUILD_DIR)\*') do del /q /f "$(BUILD_DIR)\%%f"
+	powershell -Command "if (Test-Path $(BUILD_DIR)) { Remove-Item -Path $(BUILD_DIR) -Recurse -Force }"
+	powershell -Command "New-Item -ItemType Directory -Path $(BUILD_DIR) | Out-Null"
 
 .PHONY: all clean

@@ -40,7 +40,7 @@
 
     lda	#$ff
     sta	sp
-    lda	#$03
+    lda	#$07
     sta	sp + 1
 
     jsr	_NesMain         ; CのNesMain()関数を呼び出し、メイン処理開始
@@ -53,8 +53,18 @@
 ; VBlank時に呼ばれる割り込み処理へジャンプ
 ; ------------------------------------------------------------
 .proc	NMI
-    jsr _NMIProc         ; CのNMIProc()割り込み処理関数を呼ぶ
-    rti                  ; 割り込みから復帰
+    pha          ; Aを退避
+    txa
+    pha          ; Xを退避
+    tya
+    pha          ; Yを退避
+    jsr _NMIProc
+    pla
+    tay          ; Yを復帰
+    pla
+    tax          ; Xを復帰
+    pla          ; Aを復帰
+    rti
 .endproc
 
 
